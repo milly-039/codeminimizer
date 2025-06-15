@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Minifier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>JS & CSS Minifier</h1>
+  
+  <textarea id="input" placeholder="Paste your JS or CSS code here..."></textarea>
+  
+  <div class="buttons">
+    <button onclick="minifyJS()">Minify JS</button>
+    <button onclick="minifyCSS()">Minify CSS</button>
+    <button onclick="copyOutput()">Copy Output</button>
+  </div>
+  
+  <textarea id="output" placeholder="Minified output will appear here..." readonly></textarea>
+  
+  <script src="script.js"></script>
+</body>
+</html>
