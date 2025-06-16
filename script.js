@@ -28,6 +28,7 @@ function copyOutput() {
   alert("Copied to clipboard!");
 }
 
+//adding service worker
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
@@ -37,5 +38,27 @@ if ('serviceWorker' in navigator) {
       console.log('ServiceWorker registration failed:', err);
     });
   });
+}
+
+//install function logic
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('installToast').style.display = 'flex';
+});
+
+function promptInstall() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(() => {
+      document.getElementById('installToast').style.display = 'none';
+    });
+  }
+}
+
+function closeInstall() {
+  document.getElementById('installToast').style.display = 'none';
 }
 

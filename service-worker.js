@@ -11,13 +11,14 @@ self.addEventListener("install", function (e) {
         "/icon-512.png"
       ]);
     })
+
+//updatnjkcsd makes sense im stupid? i think?
+
   );
 });
 
-self.addEventListener("fetch", function (e) {
-  e.respondWith(
-    caches.match(e.request).then(function (response) {
-      return response || fetch(e.request);
-    })
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    fetch(event.request).catch(() => caches.match(event.request))
   );
 });

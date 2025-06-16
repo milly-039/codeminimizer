@@ -10,9 +10,16 @@
 
 </head>
 <body>
+  <div id="installToast" class="install-toast">
+    <button onclick="promptInstall()">📲 Install App</button>
+    <span onclick="closeInstall()" class="close-btn">×</span>
+</div>
   <h1>JS & CSS Minifier</h1>
-  
+
+
+
   <textarea id="input" placeholder="Paste your JS or CSS code here..."></textarea>
+  
   
   <div class="buttons">
     <button onclick="minifyJS()">Minify JS</button>
